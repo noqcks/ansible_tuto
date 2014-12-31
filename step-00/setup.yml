@@ -28,7 +28,7 @@
       when: rsa|failed
 
     - name: Checks if resolver is working properly (issues with some VBox/Host OS combinations)
-      command: host -t A ansible.cc
+      command: host -t A ansible.com
       register: ns
       ignore_errors: yes
 
@@ -37,7 +37,7 @@
       when: ns|failed
 
     - name: Checks if resolver is working properly with new nameserver
-      command: host -t A ansible.cc
+      command: host -t A ansible.com
 
     - name: Final greeting
       pause: prompt="Don't worry about all the red above; if you made it here, your Vagrant VMs are probably fine !
